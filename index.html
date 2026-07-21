@@ -115,7 +115,7 @@
         localStorage.setItem('cloovar_website_language', language);
     }
     function updateBiliFans() {
-        fetch(`https://api.bilibili.com/x/space/wbi/acc/info?mid=401788469`)
+        fetch(`https://api.bilibili.com/x/web-interface/card?mid=401788469`)
             .then(response => response.json())
             .then(data => {
                 if (data.code === 0) {
