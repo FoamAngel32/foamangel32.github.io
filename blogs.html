@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>FoamAngel32's Website</title>
+    <link rel="icon" href="img/foamangel32_3.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="body_id" style="margin: 0; min-height: 100vh;overflow-x: hidden;">
+    <div id="EnglishPage">
+        <div id="nav-card" style="text-align: center;">
+            <div class="nav-item-container">
+                <a href="index.html" class="nav-square" onclick="stop_index_anim()">Home</a>
+                <span>My Blog</span>
+            </div>
+        </div>
+        <div id="blog_list_en"></div>
+    </div>
+    <div id="ChinesePage">
+        <div id="nav-card" style="text-align: center;">
+            <div class="nav-item-container">
+                <a href="index.html" class="nav-square" onclick="stop_index_anim()">主页</a>
+                <span>我的博客</span>
+            </div>
+        </div>
+        <div id="blog_list_cn"></div>
+    </div>
+    <div style="text-align: center;">
+        <select id="languageSelect" onchange="langSet(this)">
+            <option value="zh-CN">简体中文</option>
+            <option value="en-US">English</option>
+        </select>
+    </div>
+    <footer>
+        <p style="color:#1a2f2f;text-shadow: 0 0px 3px rgba(255, 255, 255, 0);">© 2026 FoamAngel32. All rights reserved.
+        </p>
+    </footer>
+    <div id="bg" class="rectangle-back"></div>
+    <button id="btn_toggle_theme" title="Click here to toggle theme" onclick="toggle_theme()"
+        class="dark_mode_toggle_no_anim">
+        <img id="theme_toggle" src="img/button_toggle_theme_dark.png" alt="toggle theme">
+    </button>
+</body>
+
+</html>
+<script src="blog_decoder.js"></script>
+<script>
+    dark_mode = localStorage.getItem('cloovar_website_dark_mode');
+    language = localStorage.getItem('cloovar_website_language');
+    if (dark_mode === null) {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+            dark_mode = 'true';
+        else
+            dark_mode = 'false';
+    }
+    if (language === null) {
+        if (navigator.language.startsWith('zh'))
+            language = "zh-CN";
+        else
+            language = "en-US";
+    }
+    document.getElementById('bg').style.transition = 'none'
+    document.body.style.transition = 'none';
+    set_theme();
+    setTimeout(() => {
+        document.getElementById('bg').style.transition = 'all 0.5s ease'
+        document.body.style.transition = 'all 0.5s ease';
+    }, 1);
+    document.getElementById('languageSelect').value = language;
+    langSet(document.getElementById('languageSelect'));
+    start_decode_blog();
+    function toggle_theme() {
+        if (dark_mode === 'true')
+            dark_mode = 'false';
+        else
+            dark_mode = 'true';
+        localStorage.setItem('cloovar_website_dark_mode', dark_mode);
+        set_theme();
+    }
+    function set_theme() {
+        if (dark_mode === 'true') {
+            // document.getElementById('logo').style.color = 'white';
+            // document.getElementById('logo2').style.color = 'white';
+            document.getElementById('body_id').style.backgroundColor = 'black';
+            document.getElementById('body_id').classList.add('dark-mode');
+            document.getElementById('body_id').classList.remove('light-mode');
+            document.getElementById('theme_toggle').src = 'img/button_toggle_theme_dark.png';
+        } else {
+            // document.getElementById('logo').style.color = 'black';
+            // document.getElementById('logo2').style.color = 'black';
+            document.getElementById('body_id').style.backgroundColor = 'white';
+            document.getElementById('body_id').classList.add('light-mode');
+            document.getElementById('body_id').classList.remove('dark-mode');
+            document.getElementById('theme_toggle').src = 'img/button_toggle_theme_light.png';
+        }
+    }
+    function langSet(lang) {
+        if (lang.value === 'zh-CN') {
+            language = 'zh-CN';
+            document.getElementById('btn_toggle_theme').title = '点击切换主题';
+            document.title = "赖阿包55的网站 - REMIX";
+            document.getElementById('ChinesePage').style.display = 'block';
+            document.getElementById('EnglishPage').style.display = 'none';
+            document.documentElement.lang = 'zh-CN';
+        } else {
+            language = 'en-US';
+            document.getElementById('btn_toggle_theme').title = 'Click here to toggle theme';
+            document.title = "FoamAngel32's Website - REMIX";
+            document.getElementById('ChinesePage').style.display = 'none';
+            document.getElementById('EnglishPage').style.display = 'block';
+            document.documentElement.lang = 'en';
+        }
+        localStorage.setItem('cloovar_website_language', language);
+    }
+    function stop_index_anim() {
+        localStorage.setItem('cloovar_website_stop_first_animation', '0');
+    }
+</script>

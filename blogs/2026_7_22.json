@@ -1,0 +1,31 @@
+{
+    "structure_en":[
+        ["text0_en", "h1"],
+        ["image0", "img", "auto", "text_image0_hover_en"],
+        ["text1_en", "p"],
+        ["text2_en", "p"],
+        ["text3_en", "p"],
+        ["text4_en", "p"]
+    ],
+    "structure_cn":[
+        ["text0_cn", "h1"],
+        ["image0", "img", "auto", "text_image0_hover_cn"],
+        ["text1_cn", "p"],
+        ["text2_cn", "p"],
+        ["text3_cn", "p"],
+        ["text4_cn", "p"]
+    ],
+    "text_image0_hover_en":"My WINK",
+    "text_image0_hover_cn":"我的Wink",
+    "text0_en":"Hello, This is the first blog!",
+    "text1_en":"This feature is still testing!",
+    "text2_en":"Hope you enjoy it!",
+    "text3_en":"Also if you are looking for DELTARUNE 3DS!",
+    "text4_en":"I will write blogs about it soon!",
+    "text0_cn":"你好, 这是第一个博客!",
+    "text1_cn":"这个功能仍在测试!",
+    "text2_cn":"希望你喜欢!",
+    "text3_cn":"哦, 如果你在找DELTARUNE 3DS!",
+    "text4_cn":"我会尽快为其写博客的!",
+    "image0":"general/cloovar/wink.png"
+}
