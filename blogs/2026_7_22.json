@@ -1,7 +1,7 @@
 {
     "structure_en":[
         ["text0_en", "h1"],
-        ["image0", "img", "auto", "text_image0_hover_en", "100%"],
+        ["image0", "img", "auto", "text_image0_hover_en", "auto"],
         ["text1_en", "p"],
         ["text2_en", "p"],
         ["text3_en", "p"],
@@ -9,7 +9,7 @@
     ],
     "structure_cn":[
         ["text0_cn", "h1"],
-        ["image0", "img", "auto", "text_image0_hover_cn", "100%"],
+        ["image0", "img", "auto", "text_image0_hover_cn", "auto"],
         ["text1_cn", "p"],
         ["text2_cn", "p"],
         ["text3_cn", "p"],
