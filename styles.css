@@ -207,21 +207,25 @@ body.dark-mode span {
 }
 
 body.dark-mode a {
+    text-align: center;
     color: darkcyan;
     text-shadow: 0 0px 2px rgba(255, 255, 255, 0.4);
 }
 
 body.dark-mode a:hover {
+    text-align: center;
     color: cyan;
     text-shadow: 0 0px 2px rgba(255, 255, 255, 0.4);
 }
 
 body.dark-mode a:active {
+    text-align: center;
     color: darkgreen;
     text-shadow: 0 0px 2px rgba(255, 255, 255, 0.4);
 }
 
 body.dark-mode a:visited {
+    text-align: center;
     color: purple;
     text-shadow: 0 0px 2px rgba(255, 255, 255, 0.4);
 }
@@ -254,21 +258,25 @@ body.light-mode #bg {
 }
 
 body.light-mode a {
+    text-align: center;
     color: darkblue;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 body.light-mode a:hover {
+    text-align: center;
     color: blue;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 body.light-mode a:active {
+    text-align: center;
     color: darkred;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 body.light-mode a:visited {
+    text-align: center;
     color: purple;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
