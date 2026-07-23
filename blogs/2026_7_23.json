@@ -12,6 +12,7 @@
         ["image3", "img", "auto", "text_image0_hover", "30%"],
         ["image4", "img", "auto", "text_image4_hover_en", "30%"],
         ["text6_en", "a", "text6_link", "text6_hover_en"],
+        ["text6_alt_en", "a", "text6_alt_link", "text6_hover_en"],
         ["text7_en", "p"],
         ["text8_en", "p"],
         ["text9_en", "p"],
@@ -30,6 +31,7 @@
         ["image3", "img", "auto", "text_image0_hover", "30%"],
         ["image4", "img", "auto", "text_image4_hover_cn", "30%"],
         ["text6_cn", "a", "text6_link", "text6_hover_cn"],
+        ["text6_alt_cn", "a", "text6_alt_link", "text6_hover_cn"],
         ["text7_cn", "p"],
         ["text8_cn", "p"],
         ["text9_cn", "p"],
@@ -44,7 +46,8 @@
     "text3_en":"Well, it'a a hard project!",
     "text4_en":"But you can still play it! Though it only has Goner Maker Section",
     "text5_en":"There is some screenshots, check it out!!!",
-    "text6_en":"Download it here!!!",
+    "text6_en":"Google Drive",
+    "text6_alt_en":"Baidu Drive",
     "text7_en":"Of course the audio is downgraded due to the storage and decode speed",
     "text8_en":"It's limited to 72kbps, 32kHz and Mono",
     "text9_en":"I will probably write about UNDERTALE NES tomorrow",
@@ -56,7 +59,8 @@
     "text3_cn":"嗯, 这其实是个很难的醒目",
     "text4_cn":"但是你仍然可以玩到! 尽管只有Goner Maker的第一部分!",
     "text5_cn":"这里有截图, 看看吧!!!",
-    "text6_cn":"在这里下载!!!",
+    "text6_cn":"Google Drive",
+    "text6_alt_cn":"百度网盘",
     "text7_cn":"当然音频被降级了因为存储和解析速度",
     "text8_cn":"只有72kbps, 32kHz, 单声道",
     "text9_cn":"我明天大概会写写我的UNDERTALE NES项目",
@@ -67,5 +71,6 @@
     "image2":"2026/7/23/2.png",
     "image3":"2026/7/23/3.png",
     "image4":"2026/7/23/4.png",
-    "text6_link":"binary/2026/7/23/DELTARUNE.3dsx"
+    "text6_link":"https://drive.google.com/file/d/1BF_rrRfJQmZ3LTbVgGSghRPnpfxvZ3DG/view?usp=sharing",
+    "text6_alt_link":"https://pan.baidu.com/s/1dSeq_-Fd-Q9IS2gvswFFwQ?pwd=NDSG"
 }
