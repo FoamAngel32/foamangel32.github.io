@@ -68,7 +68,7 @@ async function start_decode_blog() {
                 new_element.src = `img/${blogData[element_entry[0]]}`;
                 new_element.style.imageRendering = element_entry[2];
                 new_element.title = blogData[element_entry[3]];
-                new_element.style.width = element_entry[4];
+                new_element.style.maxWidth = element_entry[4];
                 new_element.style.height = 'auto'; 
             }else if (element_entry[1] === 'a') {
                 new_element.href = blogData[element_entry[2]];
