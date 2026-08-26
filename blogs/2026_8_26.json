@@ -1,0 +1,35 @@
+{
+    "structure_en":[
+        ["text0_en", "h1"],
+        ["image0", "img", "auto", "text_image0_hover_en", "auto"],
+        ["text1_en", "p"],
+        ["text2_en", "p"],
+        ["text3_en", "p"],
+        ["text4_en", "p"],
+        ["text5_en", "p"]
+    ],
+    "structure_cn":[
+        ["text0_cn", "h1"],
+        ["image0", "img", "auto", "text_image0_hover_cn", "auto"],
+        ["text1_cn", "p"],
+        ["text2_cn", "p"],
+        ["text3_cn", "p"],
+        ["text4_cn", "p"],
+        ["text5_cn", "p"]
+    ],
+    "text_image0_hover_en":"I wink",
+    "text_image0_hover_cn":"我Wink",
+    "text0_en":"Radio feature coming soon!",
+    "text1_en":"This feature is still testing!",
+    "text2_en":"Hope you will enjoy it!",
+    "text3_en":"It's stream! It will play my demo video/audio",
+    "text4_en":"this webiste will be move to blog.foamangel32.top by next year!",
+    "text5_en":"(It's also my birthday today :) )",
+    "text0_cn":"电台功能即将退出",
+    "text1_cn":"这个功能仍在测试!",
+    "text2_cn":"希望你会喜欢",
+    "text3_cn":"是流媒体! 会播放我的Demo视频和音乐",
+    "text4_cn":"网页将会在明年迁移到blog.foamangel32.top!",
+    "text5_cn":"(今天还是我生日 :) )",
+    "image0":"general/cloovar/wink_16.png"
+}
