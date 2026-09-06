@@ -13,21 +13,64 @@
         <div id="nav-card" style="text-align: center;">
             <div class="nav-item-container">
                 <a href="index.html" class="nav-square" onclick="stop_index_anim()">Home</a>
-                <span>My Blog</span>
-                <a href="tracks.html" class="nav-square" onclick="stop_index_anim()">Tracks</a>
+                <a href="blogs.html" class="nav-square" onclick="stop_index_anim()">My Blog</a>
+                <span>Tracks</span>
             </div>
         </div>
-        <div id="blog_list_en"></div>
     </div>
     <div id="ChinesePage">
         <div id="nav-card" style="text-align: center;">
             <div class="nav-item-container">
                 <a href="index.html" class="nav-square" onclick="stop_index_anim()">主页</a>
-                <span>我的博客</span>
-                <a href="tracks.html" class="nav-square" onclick="stop_index_anim()">音轨</a>
+                <a href="blogs.html" class="nav-square" onclick="stop_index_anim()">我的博客</a>
+                <span>音轨</span>
             </div>
         </div>
-        <div id="blog_list_cn"></div>
+    </div>
+    <div class="audioList">
+        <h3>Counter-Clockwise Tower</h3>
+        <audio controls>
+            <source src="mus/counter-clockwise_tower.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        <h3>Evening Palace</h3>
+        <audio controls>
+            <source src="mus/evening_palace.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        <audio controls>
+            <source src="mus/evening_palace-ingame.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+        <h3>Autumn Forest</h3>
+        <audio controls>
+            <source src="mus/autumn_fade.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        <audio controls>
+            <source src="mus/autumn_fade-ingame.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+        <h3>Top of the Mountain</h3>
+        <audio controls>
+            <source src="mus/totm.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <h3>High Up In the Sky</h3>
+        <audio controls>
+            <source src="mus/huits.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        <h3>Dance Around</h3>
+        <audio controls>
+            <source src="mus/dance-around.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        <h3>Petal & Stone</h3>
+        <audio controls>
+            <source src="mus/petal_and_stone.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
     </div>
     <div style="text-align: center;">
         <select id="languageSelect" onchange="langSet(this)">
@@ -47,7 +90,6 @@
 </body>
 
 </html>
-<script src="blog_decoder.js"></script>
 <script>
     dark_mode = localStorage.getItem('cloovar_website_dark_mode');
     language = localStorage.getItem('cloovar_website_language');
@@ -72,7 +114,6 @@
     }, 1);
     document.getElementById('languageSelect').value = language;
     langSet(document.getElementById('languageSelect'));
-    start_decode_blog();
     function toggle_theme() {
         if (dark_mode === 'true')
             dark_mode = 'false';

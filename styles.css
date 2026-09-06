@@ -295,3 +295,16 @@ body.light-mode a:visited {
     border-radius: 6px;
     transition: all 0.3s ease;
 }
+#btn_toggle_1999 {
+    left:97%;
+    top:5px;
+    position: fixed;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.audioList{
+  justify-content: center; 
+  align-items: center; 
+  text-align:center;
+}
