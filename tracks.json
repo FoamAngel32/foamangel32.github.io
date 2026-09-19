@@ -6,7 +6,8 @@
         "Top of the Mountain":["totm.mp3", "audio/mp3"],
         "Petal & Stone":["petal_and_stone.wav", "audio/wav"],
         "Evening Palace":["evening_palace.ogg", "audio/vorbis"],
-        "Dance Around":["dance-around.wav", "audio/wav"]
+        "Dance Around":["dance-around.wav", "audio/wav"],
+        "Mr. Entertainment":["mr_entertainment.ogg", "audio/vorbis"]
     },
     "o":[
         "Counter-Clockwise Tower",
@@ -15,6 +16,7 @@
         "Top of the Mountain",
         "Petal & Stone",
         "Evening Palace",
-        "Dance Around"
+        "Dance Around",
+        "Mr. Entertainment"
     ]
 }
