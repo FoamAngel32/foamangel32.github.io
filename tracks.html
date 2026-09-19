@@ -27,48 +27,14 @@
             </div>
         </div>
     </div>
-    <div class="audioList">
-        <h3>Counter-Clockwise Tower</h3>
-        <audio controls>
-            <source src="mus/counter-clockwise_tower.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-        <h3>Evening Palace</h3>
-        <audio controls>
-            <source src="mus/evening_palace.ogg" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls>
-            <source src="mus/evening_palace-ingame.ogg" type="audio/ogg">
-            Your browser does not support the audio element.
-        </audio>
-        <h3>Autumn Forest</h3>
-        <audio controls>
-            <source src="mus/autumn_fade.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls>
-            <source src="mus/autumn_fade-ingame.ogg" type="audio/ogg">
-            Your browser does not support the audio element.
-        </audio>
-        <h3>Top of the Mountain</h3>
-        <audio controls>
-            <source src="mus/totm.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <h3>High Up In the Sky</h3>
-        <audio controls>
-            <source src="mus/huits.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-        <h3>Dance Around</h3>
-        <audio controls>
-            <source src="mus/dance-around.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-        <h3>Petal & Stone</h3>
-        <audio controls>
-            <source src="mus/petal_and_stone.wav" type="audio/wav">
+    <div class="audioPlayer">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <button style="border: none;background-color: #1a2f46;color: #fff;padding: 8px 16px;border-radius: 6px;cursor: pointer;" onclick="last_song()">&lt;last</button>
+            <h3 id="AudioPlayer-Title"></h3>
+            <button style="border: none;background-color: #1a2f46;color: #fff;padding: 8px 16px;border-radius: 6px;cursor: pointer;" onclick="next_song()">&gt;next</button>
+        </div>
+        <audio controls id="AudioPlayer-Audio">
+            <source id="AudioPlayer-Source" src="mus/counter-clockwise_tower.wav" type="audio/wav">
             Your browser does not support the audio element.
         </audio>
     </div>
@@ -112,8 +78,46 @@
         document.getElementById('bg').style.transition = 'all 0.5s ease'
         document.body.style.transition = 'all 0.5s ease';
     }, 1);
+    let current_song_id = 0;
     document.getElementById('languageSelect').value = language;
     langSet(document.getElementById('languageSelect'));
+    let track_data;
+    track_data = loadTracks();
+    async function loadTracks() {
+        try {
+            const response = await fetch('tracks.json');
+            track_data = await response.json();
+            update_song();
+            return track_data;
+        } catch (error) {
+            console.error('INDEX ERROR WHILE LOADING:', error);
+            if (language === "zh-CN") {
+                alert("音轨索引加载失败! 请刷新页面! ")
+            } else {
+                alert("Tracks index load failed! Please refresh! ")
+            }
+        }
+    }
+    function next_song(){
+        if(current_song_id < (track_data["o"].length-1))
+        {
+            current_song_id += 1;
+        }
+        update_song()
+    }
+    function last_song(){
+        if(current_song_id > 0)
+        {
+            current_song_id -= 1;
+        }
+        update_song()
+    }
+    function update_song(){
+        document.getElementById('AudioPlayer-Title').textContent = track_data["o"][current_song_id];
+        document.getElementById('AudioPlayer-Source').src = "mus/"+track_data["t"][track_data["o"][current_song_id]][0];
+        document.getElementById('AudioPlayer-Source').type = track_data["t"][track_data["o"][current_song_id]][1];
+        document.getElementById('AudioPlayer-Audio').load();
+    }
     function toggle_theme() {
         if (dark_mode === 'true')
             dark_mode = 'false';
@@ -160,4 +164,5 @@
     function stop_index_anim() {
         localStorage.setItem('cloovar_website_stop_first_animation', '0');
     }
+    
 </script>
