@@ -303,8 +303,8 @@ body.light-mode a:visited {
     border: none;
     cursor: pointer;
 }
-.audioList{
+.audioPlayer{
   justify-content: center; 
   align-items: center; 
-  text-align:center;
+  text-align: center;
 }
