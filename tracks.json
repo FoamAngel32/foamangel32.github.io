@@ -3,11 +3,11 @@
         "Counter-Clockwise Tower":["counter-clockwise_tower.wav", "audio/wav"],
         "Autumn Forest":["autumn_fade.wav", "audio/wav"],
         "High Up in the SKY":["huits.wav", "audio/wav"],
-        "Top of the Mountain":["totm.mp3", "audio/mp3"],
+        "Top of the Mountain":["totm.mp3", "audio/mpeg"],
         "Petal & Stone":["petal_and_stone.wav", "audio/wav"],
-        "Evening Palace":["evening_palace.ogg", "audio/vorbis"],
+        "Evening Palace":["evening_palace.ogg", "audio/ogg"],
         "Dance Around":["dance-around.wav", "audio/wav"],
-        "Mr. Entertainment":["mr_entertainment.ogg", "audio/vorbis"]
+        "Mr. Entertainment":["mr_entertainment.ogg", "audio/ogg"]
     },
     "o":[
         "Counter-Clockwise Tower",
