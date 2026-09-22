@@ -28,16 +28,24 @@
         </div>
     </div>
     <div class="audioPlayer">
+        <img id="audioPlayer-Cover" src="img/cover/temp.png" style="justify-content: center; align-items: center; gap: 10px; width: 20%; height: 20%; image-rendering: pixelated;">
         <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-            <button style="border: none;background-color: #1a2f46;color: #fff;padding: 8px 16px;border-radius: 6px;cursor: pointer;" onclick="last_song()">&lt;last</button>
-            <h3 id="AudioPlayer-Title"></h3>
-            <button style="border: none;background-color: #1a2f46;color: #fff;padding: 8px 16px;border-radius: 6px;cursor: pointer;" onclick="next_song()">&gt;next</button>
+            <button
+                style="border: none;background-color: #1a2f46;color: #fff;padding: 8px 16px;border-radius: 6px;cursor: pointer;"
+                onclick="last_song()">&lt;last</button>
+            <h3 id="audioPlayer-Title"></h3>
+            <button
+                style="border: none;background-color: #1a2f46;color: #fff;padding: 8px 16px;border-radius: 6px;cursor: pointer;"
+                onclick="next_song()">next&gt;</button>
         </div>
-        <audio controls id="AudioPlayer-Audio">
-            <source id="AudioPlayer-Source" src="mus/counter-clockwise_tower.wav" type="audio/wav">
+        <audio controls id="audioPlayer-Audio">
+            <source id="audioPlayer-Source" src="mus/counter-clockwise_tower.wav" type="audio/wav">
             Your browser does not support the audio element.
         </audio>
     </div>
+    <hr style="width: 40%; margin: 30px auto; border: none; border-top: 2px solid #222;">
+    <h1>Track List</h1>
+    <div id="trackList"></div>
     <div style="text-align: center;">
         <select id="languageSelect" onchange="langSet(this)">
             <option value="zh-CN">简体中文</option>
@@ -57,8 +65,8 @@
 
 </html>
 <script>
-    dark_mode = localStorage.getItem('cloovar_website_dark_mode');
-    language = localStorage.getItem('cloovar_website_language');
+    let dark_mode = localStorage.getItem('cloovar_website_dark_mode');
+    let language = localStorage.getItem('cloovar_website_language');
     if (dark_mode === null) {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches)
             dark_mode = 'true';
@@ -87,6 +95,14 @@
         try {
             const response = await fetch('tracks.json');
             track_data = await response.json();
+            let track_id = 1;
+            for (const trackName of track_data["o"]) {
+                const p = document.createElement('p')
+                p.textContent = track_id + ". " + trackName
+                p.id = "trackList-track" + (track_id - 1);
+                document.getElementById('trackList').appendChild(p);
+                track_id++;
+            }
             update_song();
             return track_data;
         } catch (error) {
@@ -98,25 +114,36 @@
             }
         }
     }
-    function next_song(){
-        if(current_song_id < (track_data["o"].length-1))
-        {
+    function next_song() {
+        if (current_song_id < (track_data["o"].length - 1)) {
             current_song_id += 1;
         }
         update_song()
     }
-    function last_song(){
-        if(current_song_id > 0)
-        {
+    function last_song() {
+        if (current_song_id > 0) {
             current_song_id -= 1;
         }
         update_song()
     }
-    function update_song(){
-        document.getElementById('AudioPlayer-Title').textContent = track_data["o"][current_song_id];
-        document.getElementById('AudioPlayer-Source').src = "mus/"+track_data["t"][track_data["o"][current_song_id]][0];
-        document.getElementById('AudioPlayer-Source').type = track_data["t"][track_data["o"][current_song_id]][1];
-        document.getElementById('AudioPlayer-Audio').load();
+    function update_song() {
+        document.getElementById('audioPlayer-Title').textContent = track_data["o"][current_song_id];
+        document.getElementById('audioPlayer-Source').src = "mus/" + track_data["t"][track_data["o"][current_song_id]][0];
+        document.getElementById('audioPlayer-Source').type = track_data["t"][track_data["o"][current_song_id]][1];
+        const audio = document.getElementById('audioPlayer-Audio');
+        const playing = !audio.paused;
+        audio.load();
+        if (playing) { 
+            audio.addEventListener('canplay', () => {
+                audio.play()
+            }, { once: true });
+        }
+        const div = document.getElementById('trackList');
+
+        div.querySelectorAll('p').forEach(p => {
+            p.style.fontWeight = '';
+        });
+        document.getElementById('trackList-track' + current_song_id).style.fontWeight = 'bold';
     }
     function toggle_theme() {
         if (dark_mode === 'true')
@@ -164,5 +191,5 @@
     function stop_index_anim() {
         localStorage.setItem('cloovar_website_stop_first_animation', '0');
     }
-    
+
 </script>
