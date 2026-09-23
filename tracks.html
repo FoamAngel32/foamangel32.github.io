@@ -30,18 +30,18 @@
     <div class="audioPlayer">
         <img id="audioPlayer-Cover" src="img/cover/temp.png" style="justify-content: center; align-items: center; gap: 10px; width: 20%; height: 20%; image-rendering: pixelated;">
         <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-            <button
+            <h3 id="audioPlayer-Title"></h3>
+        </div>
+        <button
                 style="border: none;background-color: #1a2f46;color: #fff;padding: 8px 16px;border-radius: 6px;cursor: pointer;"
                 onclick="last_song()">&lt;last</button>
-            <h3 id="audioPlayer-Title"></h3>
-            <button
-                style="border: none;background-color: #1a2f46;color: #fff;padding: 8px 16px;border-radius: 6px;cursor: pointer;"
-                onclick="next_song()">next&gt;</button>
-        </div>
         <audio controls id="audioPlayer-Audio">
             <source id="audioPlayer-Source" src="mus/counter-clockwise_tower.wav" type="audio/wav">
             Your browser does not support the audio element.
         </audio>
+        <button
+            style="border: none;background-color: #1a2f46;color: #fff;padding: 8px 16px;border-radius: 6px;cursor: pointer;"
+            onclick="next_song()">next&gt;</button>
     </div>
     <hr style="width: 40%; margin: 30px auto; border: none; border-top: 2px solid #222;">
     <h1>Track List</h1>
