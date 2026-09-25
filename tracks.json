@@ -9,7 +9,8 @@
         "Dance Around":["dance-around.wav", "audio/wav"],
         "Mr. Entertainment":["mr_entertainment.ogg", "audio/ogg"],
         "Deep Darkness":["deep_darkness.ogg", "audio/ogg"],
-        "Being Yourself":["being_yourself.ogg", "audio/ogg"]
+        "Being Yourself":["being_yourself.ogg", "audio/ogg"],
+        "Snow Fields":["snow_fields.ogg", "audio/ogg"]
     },
     "o":[
         "Counter-Clockwise Tower",
@@ -21,6 +22,7 @@
         "Dance Around",
         "Mr. Entertainment",
         "Deep Darkness",
-        "Being Yourself"
+        "Being Yourself",
+        "Snow Fields"
     ]
 }
