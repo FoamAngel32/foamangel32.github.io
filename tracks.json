@@ -12,7 +12,8 @@
         "Being Yourself":["being_yourself.ogg", "audio/ogg"],
         "Snow Fields":["snow_fields.ogg", "audio/ogg"],
         "Autumn Flower":["autumn_flower.ogg", "audio/ogg"],
-        "Get yourself a coffee! (Stream intro song)":["live_intro.ogg", "audio/ogg"]
+        "Get yourself a coffee! (Stream intro song)":["live_intro.ogg", "audio/ogg"],
+        "Outer Space":["outer_space.ogg", "audio/ogg"]
     },
     "o":[
         "Counter-Clockwise Tower",
@@ -27,6 +28,7 @@
         "Being Yourself",
         "Snow Fields",
         "Autumn Flower",
-        "Get yourself a coffee! (Stream intro song)"
+        "Get yourself a coffee! (Stream intro song)",
+        "Outer Space"
     ]
 }
